@@ -92,7 +92,7 @@
                 android:id="@+id/tvRePassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Renter password:"
+                android:text="Re-enter password:"
                 android:textSize="18dp" />
 
             <EditText
@@ -100,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:hint="Renter password"
+                android:hint="Re-enter password"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true" />
@@ -110,7 +110,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/signupbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -119,5 +119,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/tvmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
