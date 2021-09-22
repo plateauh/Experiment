@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="Log in"
+            android:text="Sign up"
             android:textSize="32dp" />
 
         <LinearLayout
@@ -48,15 +48,15 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Username:" />
+                android:text="Username:"
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="JohnDoe"
                 android:layout_marginLeft="5dp"
+                android:hint="John123"
                 android:inputType="textEmailAddress"
                 android:selectAllOnFocus="true" />
         </LinearLayout>
@@ -66,21 +66,45 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tvPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Password:" />
+                android:text="Password:"
+                android:textSize="18dp" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/tePassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
                 android:layout_marginLeft="5dp"
+                android:hint="Password"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvRePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Renter password:"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/teRePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:hint="Renter password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -91,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="16dp"
-        android:text="Log in"
+        android:text="Sign up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
