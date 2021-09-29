@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun passwordChecked(): Boolean {
+    private fun passwordChecked(): Boolean {
 
         when {
             password.text.isEmpty() -> {
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun rePasswordChecked(): Boolean {
+    private fun rePasswordChecked(): Boolean {
 
         when {
             rePassword.text.isEmpty() -> {
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun usernameChecked(): Boolean {
+    private fun usernameChecked(): Boolean {
 
         when {
             username.text.isEmpty() -> {
@@ -86,5 +87,30 @@ class MainActivity : AppCompatActivity() {
             else -> return true
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this, "My lovely app is onStart()", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "My lovely app is onPause()", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "My lovely app is onResume()", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "My lovely app is onStop()", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this, "My lovely app is onDestroy()", Toast.LENGTH_LONG).show()
     }
 }
