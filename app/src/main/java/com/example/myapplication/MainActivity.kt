@@ -34,57 +34,57 @@ class MainActivity : AppCompatActivity() {
 
     private fun passwordChecked(): Boolean {
 
-        when {
+        return when {
             password.text.isEmpty() -> {
                 message.text = "Please enter a password."
-                return false
+                false
             }
             password.text.length < 8 -> {
                 message.text = "The password is too short, please enter 8 or more characters."
-                return false
+                false
             }
-            else -> return true
+            else -> true
         }
 
     }
 
     private fun rePasswordChecked(): Boolean {
 
-        when {
+        return when {
             rePassword.text.isEmpty() -> {
                 message.text = "Please re-enter the password."
-                return false
+                false
             }
             rePassword.text.toString() != password.text.toString() -> {
                 message.text = "The password & password re-entered don't match."
                 Log.d("Password matching", "Password: ${password.text} | Repassword: ${rePassword.text} | Matching: ${password.text.toString() == rePassword.text.toString()}")
-                return false
+                false
             }
-            else -> return true
+            else -> true
         }
 
     }
 
     private fun usernameChecked(): Boolean {
 
-        when {
+        return when {
             username.text.isEmpty() -> {
                 message.text = "Please enter a username."
-                return false
+                false
             }
             username.text.contains(" ") -> {
                 message.text = "No spaces are allowed in username."
-                return false
+                false
             }
             username.text.length > 10 -> {
                 message.text = "Please enter shorter username, 10 characters max."
-                return false
+                false
             }
             username.text[0].isDigit() -> {
                 message.text = "Username mustn't starts with a digit"
-                return false
+                false
             }
-            else -> return true
+            else -> true
         }
 
     }
