@@ -9,7 +9,23 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/some_et"
+        android:id="@+id/some_et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter something"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/some_et2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter something"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/some_et3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -17,10 +33,22 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/toast_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Press" />
+        android:text="Toast" />
+
+    <Button
+        android:id="@+id/tv_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text View" />
+
+    <Button
+        android:id="@+id/activity_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Another Activity" />
 
     <TextView
         android:id="@+id/some_tv"
