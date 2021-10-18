@@ -8,16 +8,25 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/ktln_btn"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/some_et"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kotlin" />
+        android:ems="10"
+        android:hint="Enter something"
+        android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/xml_btn"
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="xmlButtonListener"
-        android:text="XML" />
+        android:text="Press" />
+
+    <TextView
+        android:id="@+id/some_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
 </LinearLayout>
