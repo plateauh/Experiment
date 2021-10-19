@@ -1,15 +1,12 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View.VISIBLE
-import android.view.View.inflate
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,25 +15,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val editText1 = findViewById<EditText>(R.id.editText1)
+        val editText2 = findViewById<EditText>(R.id.editText2)
 
-        val btn = findViewById<Button>(R.id.button)
-        btn.setOnClickListener {
-            alert()
+        val intentButton = findViewById<Button>(R.id.intent_btn)
+        intentButton.setOnClickListener {
+            startActivity(
+                    Intent(this, AnotherActivity::class.java)
+                            .putExtra("data", "${editText1.text} ${editText2.text}"))
         }
-    }
 
-    private fun alert(){
-        val dialogBuilder = AlertDialog.Builder(this)
-        val dialogLayout = layoutInflater.inflate(R.layout.alert_layout, null)
-        val editText = dialogLayout.findViewById<EditText>(R.id.alert_et)
-        val button = dialogLayout.findViewById<Button>(R.id.alert_btn)
-        val textView = dialogLayout.findViewById<TextView>(R.id.alert_tv)
-        dialogBuilder.setView(dialogLayout)
-        button.setOnClickListener { textView.text = editText.text }
-        dialogBuilder.setPositiveButton("Go") { _, _ ->
-            startActivity(Intent(this, AnotherActivity::class.java).putExtra("data", editText.text.toString()))
+        val sharedButton = findViewById<Button>(R.id.shared_btn)
+        sharedButton.setOnClickListener {
+            val sharePreferences = getSharedPreferences(getString(R.string.preference_file_key),
+                    Context.MODE_PRIVATE)
+            with(sharePreferences.edit()) {
+                putString("data", "${editText1.text} ${editText2.text}")
+                apply()
+            }
+            startActivity(Intent(this, AnotherActivity::class.java))
         }
-        val alert = dialogBuilder.create()
-        alert.show()
     }
 }
